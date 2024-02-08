@@ -1,0 +1,7 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "set_tab_numbers",
+        "custom_tabline",
+    ]
+}
