@@ -1,12 +1,25 @@
+--vim.cmd('filetype on')
+--vim.cmd('filetype plugin on')
+--vim.cmd('filetype indent on')
+
 local set = vim.opt
+
+--set.list = true
+--set.listchars:append({ eol = '\\u21B2' })
+--set.listchars:append({ trail = '.' })
+vim.cmd([[
+  augroup ListCharsSettings
+    autocmd FileType java,bash,go,latex,c,markdown,make,lua setlocal list listchars+=eol:\\u21B2,trail:.
+  augroup END
+]])
 
 set.number = true
 set.relativenumber = true
 
-set.tabstop = 4
+set.expandtab = true
 set.shiftwidth = 4
 set.softtabstop = 4
-set.expandtab = true
+set.tabstop = 4
 
 set.smartindent = true
 
@@ -24,8 +37,6 @@ set.termguicolors = true
 
 set.scrolloff = 8
 set.signcolumn = "yes"
-
--- init.lua
 
 -- Function to generate the custom tabline
 function custom_tabline()
@@ -47,4 +58,3 @@ end
 
 -- Set the custom tabline
 vim.o.tabline = '%!v:lua.custom_tabline()'
-

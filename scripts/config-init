@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone --bare "https://github.com/Eltryo/.dotfiles.git $HOME/.dotfiles"
+git clone --bare "https://github.com/Eltryo/.dotfiles.git" "$HOME/.dotfiles"
 
 # define config alias locally since the dotfiles
 # aren't installed on the system yet

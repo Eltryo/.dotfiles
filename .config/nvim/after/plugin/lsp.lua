@@ -2,7 +2,7 @@ local lsp_zero = require('lsp-zero').preset({})
 local lsp_config = require('lspconfig')
 
 lsp_zero.on_attach(function(_, bufnr)
-  lsp_zero.default_keymaps({buffer = bufnr})
+  lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
 lsp_zero.set_server_config({
@@ -11,14 +11,16 @@ lsp_zero.set_server_config({
   end,
 })
 
-lsp_config["clangd"].setup{}
+lsp_config["jdtls"].setup {}
+lsp_config["gopls"].setup {}
+lsp_config["clangd"].setup {}
 lsp_config["dartls"].setup({
-  cmd = { "dart", "language-server", "--protocol=lsp"},
+  cmd = { "dart", "language-server", "--protocol=lsp" },
   settings = {
     dart = {
       analysisExcludedFolders = {
-				vim.fn.expand("$HOME/.pub-cache"),
-				vim.fn.expand("$HOME/flutter"),
+        vim.fn.expand("$HOME/.pub-cache"),
+        vim.fn.expand("$HOME/flutter"),
       }
     }
   }

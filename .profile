@@ -41,7 +41,7 @@ export GOBIN="$GOPATH/bin"
 
 # additional paths
 export PATH="$PATH:$JAVA_HOME/bin"
-export PATH="$PATH:$HOME/.local/share/nvim/mason/packages/jdtls"
+export PATH="$PATH:$HOME/.local/share/nvim/mason/packages/jdtls/bin"
 export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$GOROOT/bin"
 export PATH="$PATH:/home/david/.local/share/JetBrains/Toolbox/scripts"
@@ -50,6 +50,7 @@ export PATH="$PATH:/home/david/flutter/bin"
 export PATH="$PATH:/home/david/scripts"
 export PATH="$PATH:/home/david/arduino"
 export PATH="$PATH:$HOME/.pub-cache/bin"
+export PATH=$PATH:/home/david/.spicetify
 
 PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
 export PATH
