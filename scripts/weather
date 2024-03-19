@@ -1,0 +1,42 @@
+#!/bin/bash
+
+api_key="802dbeadd8de48a78b9160819231909"
+base_url="http://api.weatherapi.com/v1"
+#ip=$(hostname -I | cut -d " " -f 1)
+
+opt_t=false
+opt_h=false
+
+while getopts "th" opt; do
+    case $opt in
+        t)
+            opt_t=true
+            ;;
+        h)
+            opt_h=true
+            ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            exit 1
+            ;;
+    esac
+done
+
+if [ $OPTIND -eq 1 ]; then
+    echo "Please provide a flag" >&2
+    exit 1
+fi
+
+if $opt_t ; then
+    temp=$(curl -sS "$base_url/current.json?key=$api_key&q=Nuremberg"\
+    | jq '.current.temp_c')
+
+    echo -e "The current temperature is $temp\u00b0\u0043"
+fi
+
+if $opt_h ; then
+    humidity=$(curl -sS "$base_url/current.json?key=$api_key&q=Nuremberg"\
+    | jq '.current.humidity')
+
+    echo "The current humidity is $humidity%"
+fi
