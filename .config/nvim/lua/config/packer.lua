@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
   }
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use 'lervag/vimtex'
-  --use 'ThePrimeagen/harpoon'
+  use 'ThePrimeagen/harpoon'
   use 'mbbill/undotree'
   --use 'tpope/vim-fugitive'
   use 'shaunsingh/nord.nvim'
@@ -47,4 +47,5 @@ return require('packer').startup(function(use)
   })
   --use 'mfussenegger/nvim-jdtls'
   use 'ggandor/leap.nvim'
+  use 'm4xshen/autoclose.nvim'
 end)
