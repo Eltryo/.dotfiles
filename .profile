@@ -32,7 +32,7 @@ export PATH="$PATH:/home/david/.local/share/JetBrains/Toolbox/scripts"
 
 # additional environment variables
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
-export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar"
+export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/eclipse/lombok.jar"
 
 #export GO111MODULE=off
 export GOPATH="$HOME/go"
@@ -60,6 +60,5 @@ alias "gitl"="git log --oneline --graph --all"
 alias "ohmvpn"="sudo openconnect --disable-ipv6 --protocol=gp -u merklda91755 vpn.ohmportal.de"
 alias "bluecon"="bluetoothctl connect 5C:56:A4:88:1F:C6"
 alias "bluedis"="bluetoothctl disconnect"
-alias "hwificon"="nmcli c up uuid 5235dfab-a387-45b2-86c8-9b4316fd6995"
-alias "hwifidown"="nmcli c down uuid 5235dfab-a387-45b2-86c8-9b4316fd6995"
+alias "hw"="nmcli c up uuid 5235dfab-a387-45b2-86c8-9b4316fd6995"
 alias "config"='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
