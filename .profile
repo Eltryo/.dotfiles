@@ -50,7 +50,7 @@ export PATH="$PATH:/home/david/flutter/bin"
 export PATH="$PATH:/home/david/scripts"
 export PATH="$PATH:/home/david/arduino"
 export PATH="$PATH:$HOME/.pub-cache/bin"
-export PATH=$PATH:/home/david/.spicetify
+export PATH="$PATH:/opt/nvim/"
 
 PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
 export PATH
