@@ -32,7 +32,8 @@ export PATH="$PATH:/home/david/.local/share/JetBrains/Toolbox/scripts"
 
 # additional environment variables
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
-export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/eclipse/lombok.jar"
+#export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/eclipse/lombok.jar"
+unset JDTLS_JVM_ARGS
 
 #export GO111MODULE=off
 export GOPATH="$HOME/go"
@@ -41,7 +42,7 @@ export GOBIN="$GOPATH/bin"
 
 # additional paths
 export PATH="$PATH:$JAVA_HOME/bin"
-export PATH="$PATH:$HOME/.local/share/nvim/mason/packages/jdtls/bin"
+export PATH="$PATH:$HOME/.local/share/nvim/mason/packages/jdtls"
 export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$GOROOT/bin"
 export PATH="$PATH:/home/david/.local/share/JetBrains/Toolbox/scripts"
