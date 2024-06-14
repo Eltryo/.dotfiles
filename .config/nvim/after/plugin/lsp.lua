@@ -31,7 +31,9 @@ require('mason-lspconfig').setup({
     handlers = {
         --setup the language servers
         lsp_config.clangd.setup({}),
-        lsp_config.lua_ls.setup({})
+        lsp_config.lua_ls.setup({}),
+        lsp_config.tsserver.setup({}),
+        lsp_config.bashls.setup({})
     },
 })
 

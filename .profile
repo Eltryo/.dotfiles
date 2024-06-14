@@ -63,3 +63,4 @@ alias "bluecon"="bluetoothctl connect 5C:56:A4:88:1F:C6"
 alias "bluedis"="bluetoothctl disconnect"
 alias "hw"="nmcli c up uuid 5235dfab-a387-45b2-86c8-9b4316fd6995"
 alias "config"='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias "nextsync"="~/.local/bin/Nextcloud-3.13.0-x86_64.AppImage"
