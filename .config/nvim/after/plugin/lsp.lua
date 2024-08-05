@@ -10,7 +10,7 @@ lsp_zero.set_server_config({
         client.server_capabilities.semanticTokensProvider = nil
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentFormattingRangeProvider = false
-    end,
+    end
 })
 
 lsp_config["dartls"].setup({
@@ -34,8 +34,20 @@ require('mason-lspconfig').setup({
         lsp_config.lua_ls.setup({}),
         lsp_config.tsserver.setup({}),
         lsp_config.bashls.setup({}),
-        lsp_config.html.setup({})
+        lsp_config.html.setup({}),
     },
 })
+
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+    vim.api.nvim_set_hl(0, group, {})
+end
+
+--disable semantic highlighting
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+});
 
 lsp_zero.setup({})
