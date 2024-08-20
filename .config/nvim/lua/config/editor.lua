@@ -10,6 +10,9 @@ vim.cmd([[
   augroup END
 ]])
 
+--blockcursor
+set.guicursor=""
+
 --line numbering
 set.number = true
 set.relativenumber = true

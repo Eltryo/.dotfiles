@@ -11,7 +11,7 @@ require 'nvim-treesitter.configs'.setup {
     auto_install = true,
 
     highlight = {
-        enable = false,
+        enable = true,
         disable = {"latex", "org"},
 
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.

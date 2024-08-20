@@ -64,3 +64,5 @@ vim.keymap.set("n", "L", "gt")
 vim.keymap.set("n", "<leader>tn", function ()
     vim.cmd('tabnew ' .. vim.fn.expand('%:p:h'))
 end)
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

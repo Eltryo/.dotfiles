@@ -42,4 +42,13 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-jdtls'
     use 'ggandor/leap.nvim'
     use 'm4xshen/autoclose.nvim'
+    use 'ptzz/lf.vim'
+    require("packer").startup(function()
+        use({
+            "stevearc/oil.nvim",
+            config = function()
+                require("oil").setup()
+            end,
+        })
+    end)
 end)
