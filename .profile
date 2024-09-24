@@ -26,6 +26,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Bitwarden api keys
+export BW_CLIENTID=user.ed60c9b9-3069-46ad-adf8-af9201662488
+export BW_CLIENTSECRET=eX9cA59Beb6aqymD8lo8tqXVkv8unQ 
 
 # Added by Toolbox App
 export PATH="$PATH:/home/david/.local/share/JetBrains/Toolbox/scripts"
@@ -55,12 +58,3 @@ export PATH="$PATH:/opt/nvim/"
 
 PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
 export PATH
-
-# additional aliases
-alias "gitl"="git log --oneline --graph --all"
-alias "ohmvpn"="sudo openconnect --disable-ipv6 --protocol=gp -u merklda91755 vpn.ohmportal.de"
-alias "bluecon"="bluetoothctl connect 5C:56:A4:88:1F:C6"
-alias "bluedis"="bluetoothctl disconnect"
-alias "hw"="nmcli c up uuid 5235dfab-a387-45b2-86c8-9b4316fd6995"
-alias "config"='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias "nextsync"="~/.local/bin/Nextcloud-3.13.0-x86_64.AppImage"

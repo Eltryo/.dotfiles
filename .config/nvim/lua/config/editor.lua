@@ -37,7 +37,7 @@ set.undofile = true
 set.hlsearch = false
 set.incsearch = true
 
-set.termguicolors = true
+set.termguicolors = false
 
 set.scrolloff = 8
 set.signcolumn = "yes"
