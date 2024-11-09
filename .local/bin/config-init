@@ -9,13 +9,13 @@ function config {
 }
 
 # create a directory to backup existing dotfiles to
-mkdir -p .dotfiles-backup
+mkdir -p .dotfiles.bak
 config checkout
 if [ $? = 0 ]; then
-  echo "Checked out dotfiles from git@github.com:mrjones2014/dotfiles.git";
-  else
-    echo "Moving existing dotfiles to ~/.dotfiles-backup";
-    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
+  echo "Checked out dotfiles from https://github.com/Eltryo/.dotfiles.git";
+else
+    echo "Moving existing dotfiles to ~/.dotfiles.bak";
+    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles.bak/{}
 fi
 
 # checkout dotfiles from repo

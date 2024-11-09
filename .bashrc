@@ -103,7 +103,7 @@ alias l='ls -CF'
 alias ssha='eval $(ssh-agent) && ssh-add'
 
 # additional aliases
-alias "gitl"="git log --oneline --graph --all"
+alias "gitl"="git log --oneline --graph --all --decorate"
 alias "ohmvpn"="sudo openconnect --disable-ipv6 --protocol=gp -u merklda91755 vpn.ohmportal.de"
 alias "bluecon"="bluetoothctl connect 5C:56:A4:88:1F:C6"
 alias "bluedis"="bluetoothctl disconnect"
