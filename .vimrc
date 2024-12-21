@@ -1,23 +1,20 @@
-" Don't try to be vi compatible
+" Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
-" Helps force plugins to load correctly when it is turned back on below
-filetype off
+" Enable type file detection. Vim will be able to try to detect the type of file is use.
+filetype on
 
-" TODO: Load plugins here (pathogen or vundle)
+" Enable plugins and load plugin for the detected file type.
+filetype plugin on
 
-" Turn on syntax highlighting
+" Load an indent file for the detected file type.
+filetype indent on
+
+" Turn syntax highlighting on.
 syntax on
-
-" For plugins to load correctly
-filetype plugin indent on
 
 " TODO: Pick a leader key
 let mapleader = " "
-
-" Show line numbers
-set number
-set relativenumber
 
 " Show file stats
 set ruler
@@ -28,43 +25,70 @@ set visualbell
 " Encoding
 set encoding=utf-8
 
-" Whitespace
-set wrap
-set textwidth=80
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set noshiftround
-
-" Cursor motion
-set scrolloff=8
-
-" Allow hidden buffers
-set hidden
-
 " Rendering
 set ttyfast
-
-" Status bar
-set laststatus=2
-
-" Last line
-set showmode
-set showcmd
-
-" Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
 
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
 
-" Uncomment this to enable by default:
-" set list " To enable by default
+" Add numbers to the file.
+set number
 
-" Or use your leader key + l to toggle on/off
-map <leader>l :set list!<CR> " Toggle tabs and EOL
+" Show line numbers
+set relativenumber
+
+" Highlight cursor line underneath the cursor horizontally.
+set cursorline
+
+" Set shift width to 4 spaces.
+set shiftwidth=4
+
+" Set tab width to 4 columns.
+set tabstop=4
+
+" Use space characters instead of tabs.
+set expandtab
+
+" Do not save backup files.
+set nobackup
+
+" Do not let cursor scroll below or above N number of lines when scrolling.
+set scrolloff=8
+
+" Do not wrap lines. Allow long lines to extend as far as the line goes.
+set nowrap
+
+" While searching though a file incrementally highlight matching characters as you type.
+set incsearch
+
+" Ignore capital letters during search.
+set ignorecase
+
+" Override the ignorecase option if searching for capital letters.
+" This will allow you to search specifically for capital letters.
+set smartcase
+
+" Show partial command you type in the last line of the screen.
+set showcmd
+
+" Show the mode you are on the last line.
+set showmode
+
+" Show matching words during a search.
+set showmatch
+
+" Use highlighting when doing a search.
+set hlsearch
+
+" Set the commands to save in history default number is 20.
+set history=1000
+
+" Enable auto completion menu after pressing TAB.
+set wildmenu
+
+" Make wildmenu behave like similar to Bash completion.
+set wildmode=list:longest
+
+" There are certain files that we would never want to edit with Vim.
+" Wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
