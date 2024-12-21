@@ -110,6 +110,7 @@ alias "bluedis"="bluetoothctl disconnect"
 alias "hw"="nmcli c up uuid 5235dfab-a387-45b2-86c8-9b4316fd6995"
 alias "config"='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias "nextsync"="~/.local/bin/Nextcloud*"
+alias nvimks='NVIM_APPNAME="nvimks" nvim'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

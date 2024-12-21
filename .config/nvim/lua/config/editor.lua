@@ -1,14 +1,19 @@
 local set = vim.opt
 
--- setup for list characters
+-- auto commands
 vim.cmd([[
-  augroup ListCharsSettings
-    autocmd FileType java,bash,go,latex,c,markdown,make,lua setlocal list listchars+=eol:\\u21B2,trail:.
-  augroup END
-  augroup NvimTermSettings
-      autocmd TermOpen * setlocal nonumber norelativenumber
-  augroup END
+    augroup ListCharsSettings
+        autocmd FileType java,bash,go,latex,c,markdown,make,lua setlocal list listchars+=eol:\\u21B2,trail:.
+    augroup END
+
+    augroup NvimTermSettings
+        autocmd TermOpen * setlocal nonumber norelativenumber
+    augroup END
+
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual'}
 ]])
+
+set.clipboard = "unnamedplus"
 
 --blockcursor
 set.guicursor=""
@@ -32,7 +37,6 @@ set.backup = false
 set.undodir = os.getenv("HOME") .. "/.vim/undodir"
 set.undofile = true
 
-
 --search behavior
 set.hlsearch = false
 set.incsearch = true
@@ -54,7 +58,7 @@ function custom_tabline()
         local tab_label = vim.fn.fnamemodify(vim.fn.bufname(vim.fn.tabpagebuflist(i)[1]), ":t")
 
         -- Highlight the current tab
-        local tab_highlight = (i == current_tab) and '%#TabLineSel#' or '%#TabLine#'
+        local tab_highlight = (i == current_tab) and '%#TabLineSel#*' or '%#TabLine#'
 
         tabline = tabline .. tab_highlight .. ' ' .. tab_number .. ': ' .. tab_label .. ' %T '
     end

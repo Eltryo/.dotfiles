@@ -28,30 +28,19 @@ fi
 
 # Bitwarden api keys
 export BW_CLIENTID=user.ed60c9b9-3069-46ad-adf8-af9201662488
-export BW_CLIENTSECRET=eX9cA59Beb6aqymD8lo8tqXVkv8unQ 
+export BW_CLIENTSECRET=xgpaWWlYZag4RTiIMmXs7Clp8SMT63 
 
 # Added by Toolbox App
 export PATH="$PATH:/home/david/.local/share/JetBrains/Toolbox/scripts"
 
 # additional environment variables
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
-#export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/eclipse/lombok.jar"
-unset JDTLS_JVM_ARGS
-
-#export GO111MODULE=off
-export GOPATH="$HOME/go"
-export GOROOT="/usr/local/go"
-export GOBIN="$GOPATH/bin"
 
 # additional paths
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:$HOME/.local/share/nvim/mason/packages/jdtls"
-export PATH="$PATH:$GOBIN"
-export PATH="$PATH:$GOROOT/bin"
-export PATH="$PATH:/home/david/.local/share/JetBrains/Toolbox/scripts"
 export PATH="$PATH:/home/david/Android/Sdk/emulator"
 export PATH="$PATH:/home/david/flutter/bin"
-export PATH="$PATH:/home/david/scripts"
 export PATH="$PATH:/home/david/arduino"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 export PATH="$PATH:/opt/nvim/"
